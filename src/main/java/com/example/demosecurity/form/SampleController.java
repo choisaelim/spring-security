@@ -12,4 +12,10 @@ public class SampleController {
         model.addAttribute("message", "hello");
         return "index";
     }
+
+    @GetMapping("/info")
+    public String info(Model model) {
+        model.addAttribute("message", "Info");
+        return "index";
+    }
 }
