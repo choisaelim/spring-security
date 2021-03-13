@@ -1,5 +1,7 @@
 package com.example.demosecurity.form;
 
+import java.security.Principal;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,12 @@ public class SampleController {
     @GetMapping("/info")
     public String info(Model model) {
         model.addAttribute("message", "Info");
+        return "index";
+    }
+
+    @GetMapping("/dashboard")
+    public String dashboard(Model model, Principal principal) {
+        model.addAttribute("message", "Hello " + principal.getName());
         return "index";
     }
 }
